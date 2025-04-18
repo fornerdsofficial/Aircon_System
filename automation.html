@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에어컨 모니터링 시스템 - 자동화 설정</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo-placeholder.png" alt="로고" class="sidebar-logo">
+                <h3>에어컨 시스템</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> 대시보드</a></li>
+                    <li><a href="monitoring.html"><i class="fas fa-desktop"></i> 실시간 모니터링</a></li>
+                    <li><a href="control.html"><i class="fas fa-sliders-h"></i> 원격 제어</a></li>
+                    <li><a href="optimization.html"><i class="fas fa-bolt"></i> 에너지 최적화</a></li>
+                    <li><a href="maintenance.html"><i class="fas fa-tools"></i> 유지보수</a></li>
+                    <li class="active"><a href="automation.html"><i class="fas fa-magic"></i> 자동화 설정</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> 사용자 설정</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>자동화 설정</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/images/profile-placeholder.png" alt="프로필">
+                        <div class="user-info">
+                            <h4>홍길동</h4>
+                            <p>관리자</p>
+                        </div>
+                        <button class="profile-dropdown">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 자동화 설정 컨텐츠 -->
+            <div class="automation-content">
+                <!-- 현재 설정된 자동화 규칙 섹션 -->
+                <section class="automation-rules">
+                    <div class="section-header">
+                        <h3>자동화 규칙</h3>
+                        <div class="rule-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i> 새 규칙 추가
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="rules-list">
+                        <div class="rule-item">
+                            <div class="rule-header">
+                                <div class="rule-info">
+                                    <h4>출근 시간 자동 가동</h4>
+                                    <p class="rule-description">평일 오전 8:30에 모든 사무실 에어컨 자동 가동</p>
+                                </div>
+                                <div class="rule-status">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="rule1" class="toggle-input" checked>
+                                        <label for="rule1" class="toggle-label"></label>
+                                    </div>
+                                    <div class="rule-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-details">
+                                <div class="rule-condition">
+                                    <h5>조건</h5>
+                                    <ul>
+                                        <li>요일: 월, 화, 수, 목, 금</li>
+                                        <li>시간: 08:30</li>
+                                    </ul>
+                                </div>
+                                <div class="rule-action">
+                                    <h5>동작</h5>
+                                    <ul>
+                                        <li>대상: 모든 사무실 에어컨</li>
+                                        <li>명령: 전원 ON</li>
+                                        <li>모드: 냉방</li>
+                                        <li>온도: 24°C</li>
+                                        <li>풍량: 중간</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rule-item">
+                            <div class="rule-header">
+                                <div class="rule-info">
+                                    <h4>퇴근 시간 자동 종료</h4>
+                                    <p class="rule-description">평일 오후 6:30에 모든 에어컨 자동 종료</p>
+                                </div>
+                                <div class="rule-status">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="rule2" class="toggle-input" checked>
+                                        <label for="rule2" class="toggle-label"></label>
+                                    </div>
+                                    <div class="rule-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-details">
+                                <div class="rule-condition">
+                                    <h5>조건</h5>
+                                    <ul>
+                                        <li>요일: 월, 화, 수, 목, 금</li>
+                                        <li>시간: 18:30</li>
+                                    </ul>
+                                </div>
+                                <div class="rule-action">
+                                    <h5>동작</h5>
+                                    <ul>
+                                        <li>대상: 모든 에어컨</li>
+                                        <li>명령: 전원 OFF</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rule-item">
+                            <div class="rule-header">
+                                <div class="rule-info">
+                                    <h4>온도 자동 조절</h4>
+                                    <p class="rule-description">실내 온도 28°C 이상일 때 자동으로 에어컨 가동</p>
+                                </div>
+                                <div class="rule-status">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="rule3" class="toggle-input" checked>
+                                        <label for="rule3" class="toggle-label"></label>
+                                    </div>
+                                    <div class="rule-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-details">
+                                <div class="rule-condition">
+                                    <h5>조건</h5>
+                                    <ul>
+                                        <li>센서 조건: 실내 온도 >= 28°C</li>
+                                        <li>시간 제한: 업무 시간 내 (08:00 - 19:00)</li>
+                                    </ul>
+                                </div>
+                                <div class="rule-action">
+                                    <h5>동작</h5>
+                                    <ul>
+                                        <li>대상: 해당 구역 에어컨</li>
+                                        <li>명령: 전원 ON</li>
+                                        <li>모드: 냉방</li>
+                                        <li>온도: 24°C</li>
+                                        <li>풍량: 자동</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rule-item">
+                            <div class="rule-header">
+                                <div class="rule-info">
+                                    <h4>주말 에너지 절약</h4>
+                                    <p class="rule-description">주말에는 모든 에어컨 자동 전원 OFF</p>
+                                </div>
+                                <div class="rule-status">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="rule4" class="toggle-input">
+                                        <label for="rule4" class="toggle-label"></label>
+                                    </div>
+                                    <div class="rule-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rule-details">
+                                <div class="rule-condition">
+                                    <h5>조건</h5>
+                                    <ul>
+                                        <li>요일: 토, 일</li>
+                                        <li>시간: 모든 시간</li>
+                                    </ul>
+                                </div>
+                                <div class="rule-action">
+                                    <h5>동작</h5>
+                                    <ul>
+                                        <li>대상: 모든 에어컨</li>
+                                        <li>명령: 전원 OFF</li>
+                                        <li>예외: 서버실 에어컨</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 스케줄 설정 섹션 -->
+                <section class="schedule-settings">
+                    <div class="section-header">
+                        <h3>스케줄 설정</h3>
+                        <div class="schedule-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i> 새 스케줄 추가
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-container">
+                        <div class="schedule-days">
+                            <div class="day-column">
+                                <div class="day-header">시간</div>
+                                <div class="time-slots">
+                                    <div class="time-slot">05:00</div>
+                                    <div class="time-slot">06:00</div>
+                                    <div class="time-slot">07:00</div>
+                                    <div class="time-slot">08:00</div>
+                                    <div class="time-slot">09:00</div>
+                                    <div class="time-slot">10:00</div>
+                                    <div class="time-slot">11:00</div>
+                                    <div class="time-slot">12:00</div>
+                                    <div class="time-slot">13:00</div>
+                                    <div class="time-slot">14:00</div>
+                                    <div class="time-slot">15:00</div>
+                                    <div class="time-slot">16:00</div>
+                                    <div class="time-slot">17:00</div>
+                                    <div class="time-slot">18:00</div>
+                                    <div class="time-slot">19:00</div>
+                                    <div class="time-slot">20:00</div>
+                                    <div class="time-slot">21:00</div>
+                                    <div class="time-slot">22:00</div>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">월</div>
+                                <div class="day-schedule">
+                                    <div class="schedule-block work-time" style="top: 35%; height: 45%;" title="정상 가동: 08:30 - 18:30"></div>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">화</div>
+                                <div class="day-schedule">
+                                    <div class="schedule-block work-time" style="top: 35%; height: 45%;" title="정상 가동: 08:30 - 18:30"></div>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">수</div>
+                                <div class="day-schedule">
+                                    <div class="schedule-block work-time" style="top: 35%; height: 45%;" title="정상 가동: 08:30 - 18:30"></div>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">목</div>
+                                <div class="day-schedule">
+                                    <div class="schedule-block work-time" style="top: 35%; height: 45%;" title="정상 가동: 08:30 - 18:30"></div>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">금</div>
+                                <div class="day-schedule">
+                                    <div class="schedule-block work-time" style="top: 35%; height: 52%;" title="정상 가동: 08:30 - 20:00"></div>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">토</div>
+                                <div class="day-schedule">
+                                    <div class="schedule-block weekend" style="top: 45%; height: 10%;" title="필요시 가동: 10:00 - 12:00"></div>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">일</div>
+                                <div class="day-schedule">
+                                    <!-- 스케줄 없음 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-legend">
+                        <div class="legend-item">
+                            <span class="legend-color work-time"></span>
+                            <span class="legend-text">정상 가동</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color weekend"></span>
+                            <span class="legend-text">필요시 가동</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color eco-mode"></span>
+                            <span class="legend-text">절전 모드</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 센서 연동 설정 섹션 -->
+                <section class="sensor-settings">
+                    <div class="section-header">
+                        <h3>센서 연동 설정</h3>
+                    </div>
+                    
+                    <div class="sensors-container">
+                        <div class="sensor-item">
+                            <div class="sensor-header">
+                                <div class="sensor-info">
+                                    <h4>온도 센서</h4>
+                                    <p class="sensor-description">실내 온도에 따른 자동 제어</p>
+                                </div>
+                                <div class="sensor-status">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="sensor1" class="toggle-input" checked>
+                                        <label for="sensor1" class="toggle-label"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sensor-settings">
+                                <div class="setting-group">
+                                    <label>냉방 작동 온도:</label>
+                                    <div class="range-slider">
+                                        <input type="range" min="24" max="30" value="28" class="slider">
+                                        <div class="range-value">28°C</div>
+                                    </div>
+                                </div>
+                                <div class="setting-group">
+                                    <label>냉방 정지 온도:</label>
+                                    <div class="range-slider">
+                                        <input type="range" min="20" max="26" value="24" class="slider">
+                                        <div class="range-value">24°C</div>
+                                    </div>
+                                </div>
+                                <div class="setting-group">
+                                    <label>적용 대상:</label>
+                                    <select>
+                                        <option>모든 에어컨</option>
+                                        <option>1층</option>
+                                        <option>2층</option>
+                                        <option>3층</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sensor-item">
+                            <div class="sensor-header">
+                                <div class="sensor-info">
+                                    <h4>습도 센서</h4>
+                                    <p class="sensor-description">실내 습도에 따른 제습 모드 자동 전환</p>
+                                </div>
+                                <div class="sensor-status">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="sensor2" class="toggle-input" checked>
+                                        <label for="sensor2" class="toggle-label"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sensor-settings">
+                                <div class="setting-group">
+                                    <label>제습 작동 습도:</label>
+                                    <div class="range-slider">
+                                        <input type="range" min="50" max="80" value="65" class="slider">
+                                        <div class="range-value">65%</div>
+                                    </div>
+                                </div>
+                                <div class="setting-group">
+                                    <label>제습 정지 습도:</label>
+                                    <div class="range-slider">
+                                        <input type="range" min="30" max="60" value="50" class="slider">
+                                        <div class="range-value">50%</div>
+                                    </div>
+                                </div>
+                                <div class="setting-group">
+                                    <label>적용 대상:</label>
+                                    <select>
+                                        <option>모든 에어컨</option>
+                                        <option>1층</option>
+                                        <option>2층</option>
+                                        <option>3층</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sensor-item">
+                            <div class="sensor-header">
+                                <div class="sensor-info">
+                                    <h4>재실 센서</h4>
+                                    <p class="sensor-description">재실 여부에 따른 자동 제어</p>
+                                </div>
+                                <div class="sensor-status">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="sensor3" class="toggle-input">
+                                        <label for="sensor3" class="toggle-label"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sensor-settings">
+                                <div class="setting-group">
+                                    <label>부재 시 자동 정지:</label>
+                                    <div class="range-slider">
+                                        <input type="range" min="5" max="60" value="30" class="slider">
+                                        <div class="range-value">30분</div>
+                                    </div>
+                                </div>
+                                <div class="setting-group">
+                                    <label>재실 시 자동 시작:</label>
+                                    <select>
+                                        <option>즉시</option>
+                                        <option>5분 후</option>
+                                        <option>10분 후</option>
+                                        <option>사용 안함</option>
+                                    </select>
+                                </div>
+                                <div class="setting-group">
+                                    <label>적용 대상:</label>
+                                    <select>
+                                        <option>회의실</option>
+                                        <option>사무실</option>
+                                        <option>모든 에어컨</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <p>&copy; 2025 에어컨 모니터링 시스템. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">문의하기</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/automation.js"></script>
+</body>
+</html>

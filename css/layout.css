@@ -1,0 +1,330 @@
+/* 메인 레이아웃 스타일 */
+
+/* 앱 컨테이너 */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 사이드바 */
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    transition: width var(--transition-normal), transform var(--transition-normal);
+}
+
+.sidebar-collapsed {
+    width: 70px;
+}
+
+.sidebar-header {
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: var(--spacing-sm);
+}
+
+.sidebar-header h3 {
+    margin-bottom: 0;
+    font-size: var(--font-md);
+    color: var(--primary-dark);
+    white-space: nowrap;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: var(--spacing-md) 0;
+    overflow-y: auto;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 2px;
+}
+
+.sidebar-nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav ul li a i {
+    margin-right: var(--spacing-md);
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-nav ul li a:hover {
+    background-color: var(--primary-bg);
+    color: var(--primary-color);
+}
+
+.sidebar-nav ul li.active a {
+    background-color: var(--primary-bg);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.sidebar-footer {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-xs);
+    color: var(--text-light);
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 메인 컨텐츠 영역 */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* 헤더 */
+.header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: var(--font-lg);
+    margin-right: var(--spacing-md);
+    cursor: pointer;
+}
+
+.header-left h2 {
+    margin-bottom: 0;
+    font-size: var(--font-lg);
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.notifications {
+    margin-right: var(--spacing-md);
+    position: relative;
+}
+
+.notification-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: var(--font-md);
+    position: relative;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: var(--spacing-sm);
+}
+
+.user-info {
+    margin-right: var(--spacing-sm);
+}
+
+.user-info h4 {
+    margin-bottom: 0;
+    font-size: var(--font-sm);
+    font-weight: 500;
+}
+
+.user-info p {
+    margin-bottom: 0;
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+}
+
+.profile-dropdown {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+}
+
+/* 푸터 */
+.footer {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+    background-color: var(--bg-white);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    margin-left: var(--spacing-md);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* 대시보드 컨텐츠 */
+.dashboard-content {
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+}
+
+/* 모니터링 컨텐츠 */
+.monitoring-content {
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+}
+
+/* 원격 제어 컨텐츠 */
+.control-content {
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+}
+
+/* 반응형 레이아웃 */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 240px;
+    }
+}
+
+@media (max-width: 992px) {
+    .app-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 60px;
+        flex-direction: row;
+    }
+    
+    .sidebar-header, .sidebar-footer {
+        display: none;
+    }
+    
+    .sidebar-nav {
+        padding: 0;
+    }
+    
+    .sidebar-nav ul {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+    .sidebar-nav ul li {
+        margin-bottom: 0;
+    }
+    
+    .sidebar-nav ul li a {
+        flex-direction: column;
+        padding: var(--spacing-sm);
+        text-align: center;
+        border-left: none;
+    }
+    
+    .sidebar-nav ul li a i {
+        margin-right: 0;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .main-content {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .header-left h2 {
+        font-size: var(--font-md);
+    }
+    
+    .user-info {
+        display: none;
+    }
+    
+    .summary-cards {
+        grid-template-columns: 1fr;
+        grid-gap: var(--spacing-md);
+    }
+    
+    .charts {
+        grid-template-columns: 1fr;
+    }
+    
+    .devices-container {
+        flex-direction: column;
+    }
+    
+    .devices-list, .device-details {
+        width: 100%;
+    }
+    
+    .device-details {
+        margin-top: var(--spacing-lg);
+    }
+}

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에어컨 모니터링 시스템 - 예측적 유지보수</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo-placeholder.png" alt="로고" class="sidebar-logo">
+                <h3>에어컨 시스템</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> 대시보드</a></li>
+                    <li><a href="monitoring.html"><i class="fas fa-desktop"></i> 실시간 모니터링</a></li>
+                    <li><a href="control.html"><i class="fas fa-sliders-h"></i> 원격 제어</a></li>
+                    <li><a href="optimization.html"><i class="fas fa-bolt"></i> 에너지 최적화</a></li>
+                    <li class="active"><a href="maintenance.html"><i class="fas fa-tools"></i> 유지보수</a></li>
+                    <li><a href="automation.html"><i class="fas fa-magic"></i> 자동화 설정</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> 사용자 설정</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>예측적 유지보수</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/images/profile-placeholder.png" alt="프로필">
+                        <div class="user-info">
+                            <h4>홍길동</h4>
+                            <p>관리자</p>
+                        </div>
+                        <button class="profile-dropdown">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 유지보수 컨텐츠 -->
+            <div class="maintenance-content">
+                <!-- 유지보수 요약 섹션 -->
+                <section class="maintenance-summary">
+                    <div class="summary-cards">
+                        <div class="card">
+                            <div class="card-icon bg-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">유지보수 필요</h3>
+                                <p class="card-value">5 <span class="card-unit">건</span></p>
+                                <p class="card-change negative">
+                                    <i class="fas fa-arrow-up"></i> 2건 증가
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon bg-danger">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">긴급 조치 필요</h3>
+                                <p class="card-value">2 <span class="card-unit">건</span></p>
+                                <p class="card-change negative">
+                                    <i class="fas fa-arrow-up"></i> 1건 증가
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon bg-success">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">예정된 유지보수</h3>
+                                <p class="card-value">12 <span class="card-unit">건</span></p>
+                                <p class="card-change neutral">
+                                    <i class="fas fa-minus"></i> 변동 없음
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon bg-info">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">완료된 유지보수</h3>
+                                <p class="card-value">28 <span class="card-unit">건</span></p>
+                                <p class="card-change positive">
+                                    <i class="fas fa-arrow-up"></i> 5건 증가
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 예측 유지보수 알림 섹션 -->
+                <section class="predictive-alerts">
+                    <div class="section-header">
+                        <h3>예측 유지보수 알림</h3>
+                        <div class="filter-actions">
+                            <select class="priority-filter">
+                                <option value="all">모든 우선순위</option>
+                                <option value="high">높음</option>
+                                <option value="medium">중간</option>
+                                <option value="low">낮음</option>
+                            </select>
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-filter"></i> 필터
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="alerts-table">
+                        <div class="table-header">
+                            <div class="table-col">장비</div>
+                            <div class="table-col">위치</div>
+                            <div class="table-col">문제</div>
+                            <div class="table-col">확률</div>
+                            <div class="table-col">예상 고장 시기</div>
+                            <div class="table-col">우선순위</div>
+                            <div class="table-col">조치</div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">에어컨 #5</div>
+                            <div class="table-col">3층 휴게실</div>
+                            <div class="table-col">압축기 이상</div>
+                            <div class="table-col">87%</div>
+                            <div class="table-col">3일 이내</div>
+                            <div class="table-col"><span class="priority high">높음</span></div>
+                            <div class="table-col">
+                                <button class="btn btn-sm btn-primary">일정 등록</button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">에어컨 #12</div>
+                            <div class="table-col">2층 회의실 B</div>
+                            <div class="table-col">냉매 부족</div>
+                            <div class="table-col">78%</div>
+                            <div class="table-col">1주일 이내</div>
+                            <div class="table-col"><span class="priority high">높음</span></div>
+                            <div class="table-col">
+                                <button class="btn btn-sm btn-primary">일정 등록</button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">에어컨 #8</div>
+                            <div class="table-col">1층 사무실</div>
+                            <div class="table-col">팬 모터 마모</div>
+                            <div class="table-col">65%</div>
+                            <div class="table-col">2주 이내</div>
+                            <div class="table-col"><span class="priority medium">중간</span></div>
+                            <div class="table-col">
+                                <button class="btn btn-sm btn-primary">일정 등록</button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">에어컨 #3</div>
+                            <div class="table-col">2층 회의실 A</div>
+                            <div class="table-col">필터 교체 필요</div>
+                            <div class="table-col">92%</div>
+                            <div class="table-col">즉시</div>
+                            <div class="table-col"><span class="priority medium">중간</span></div>
+                            <div class="table-col">
+                                <button class="btn btn-sm btn-primary">일정 등록</button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">에어컨 #15</div>
+                            <div class="table-col">3층 사무실</div>
+                            <div class="table-col">센서 오작동</div>
+                            <div class="table-col">58%</div>
+                            <div class="table-col">3주 이내</div>
+                            <div class="table-col"><span class="priority low">낮음</span></div>
+                            <div class="table-col">
+                                <button class="btn btn-sm btn-primary">일정 등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 유지보수 일정 캘린더 섹션 -->
+                <section class="maintenance-calendar">
+                    <div class="section-header">
+                        <h3>유지보수 일정</h3>
+                        <div class="calendar-controls">
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span class="current-month">2025년 4월</span>
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i> 일정 추가
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-container">
+                        <!-- 간단한 캘린더 목업 -->
+                        <div class="calendar">
+                            <div class="calendar-header">
+                                <div class="calendar-day">일</div>
+                                <div class="calendar-day">월</div>
+                                <div class="calendar-day">화</div>
+                                <div class="calendar-day">수</div>
+                                <div class="calendar-day">목</div>
+                                <div class="calendar-day">금</div>
+                                <div class="calendar-day">토</div>
+                            </div>
+                            <div class="calendar-week">
+                                <div class="calendar-date disabled">30</div>
+                                <div class="calendar-date disabled">31</div>
+                                <div class="calendar-date">1</div>
+                                <div class="calendar-date">2</div>
+                                <div class="calendar-date">3</div>
+                                <div class="calendar-date">4</div>
+                                <div class="calendar-date">5</div>
+                            </div>
+                            <div class="calendar-week">
+                                <div class="calendar-date">6</div>
+                                <div class="calendar-date">7</div>
+                                <div class="calendar-date">8</div>
+                                <div class="calendar-date">9</div>
+                                <div class="calendar-date">10</div>
+                                <div class="calendar-date">11</div>
+                                <div class="calendar-date">12</div>
+                            </div>
+                            <div class="calendar-week">
+                                <div class="calendar-date">13</div>
+                                <div class="calendar-date">14</div>
+                                <div class="calendar-date">15</div>
+                                <div class="calendar-date">16</div>
+                                <div class="calendar-date">17</div>
+                                <div class="calendar-date current">18</div>
+                                <div class="calendar-date">19</div>
+                            </div>
+                            <div class="calendar-week">
+                                <div class="calendar-date">20</div>
+                                <div class="calendar-date">
+                                    21
+                                    <div class="calendar-event maintenance">
+                                        <span class="event-time">10:00</span>
+                                        <span class="event-title">필터 교체 (5대)</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-date">22</div>
+                                <div class="calendar-date">
+                                    23
+                                    <div class="calendar-event repair">
+                                        <span class="event-time">14:00</span>
+                                        <span class="event-title">압축기 수리 (#5)</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-date">24</div>
+                                <div class="calendar-date">25</div>
+                                <div class="calendar-date">26</div>
+                            </div>
+                            <div class="calendar-week">
+                                <div class="calendar-date">27</div>
+                                <div class="calendar-date">
+                                    28
+                                    <div class="calendar-event inspection">
+                                        <span class="event-time">09:00</span>
+                                        <span class="event-title">정기 점검 (1층)</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-date">29</div>
+                                <div class="calendar-date">30</div>
+                                <div class="calendar-date disabled">1</div>
+                                <div class="calendar-date disabled">2</div>
+                                <div class="calendar-date disabled">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 유지보수 이력 섹션 -->
+                <section class="maintenance-history">
+                    <div class="section-header">
+                        <h3>유지보수 이력</h3>
+                        <div class="history-controls">
+                            <div class="search-input">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="검색어를 입력하세요">
+                            </div>
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-filter"></i> 필터
+                            </button>
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-download"></i> 내보내기
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="history-table">
+                        <div class="table-header">
+                            <div class="table-col">일자</div>
+                            <div class="table-col">장비</div>
+                            <div class="table-col">위치</div>
+                            <div class="table-col">작업 내용</div>
+                            <div class="table-col">담당자</div>
+                            <div class="table-col">비용</div>
+                            <div class="table-col">상태</div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">2025-04-15</div>
+                            <div class="table-col">에어컨 #7</div>
+                            <div class="table-col">1층 로비</div>
+                            <div class="table-col">필터 교체</div>
+                            <div class="table-col">김철수</div>
+                            <div class="table-col">50,000원</div>
+                            <div class="table-col"><span class="status-badge normal">완료</span></div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">2025-04-10</div>
+                            <div class="table-col">에어컨 #2</div>
+                            <div class="table-col">1층 사무실</div>
+                            <div class="table-col">냉매 충전</div>
+                            <div class="table-col">김철수</div>
+                            <div class="table-col">120,000원</div>
+                            <div class="table-col"><span class="status-badge normal">완료</span></div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">2025-04-03</div>
+                            <div class="table-col">에어컨 #9</div>
+                            <div class="table-col">2층 개발팀</div>
+                            <div class="table-col">팬 모터 교체</div>
+                            <div class="table-col">이영희</div>
+                            <div class="table-col">250,000원</div>
+                            <div class="table-col"><span class="status-badge normal">완료</span></div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">2025-03-25</div>
+                            <div class="table-col">에어컨 #1-15</div>
+                            <div class="table-col">전체</div>
+                            <div class="table-col">정기 점검</div>
+                            <div class="table-col">박지성</div>
+                            <div class="table-col">500,000원</div>
+                            <div class="table-col"><span class="status-badge normal">완료</span></div>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="table-col">2025-03-18</div>
+                            <div class="table-col">에어컨 #11</div>
+                            <div class="table-col">2층 회의실 C</div>
+                            <div class="table-col">제어 보드 교체</div>
+                            <div class="table-col">이영희</div>
+                            <div class="table-col">350,000원</div>
+                            <div class="table-col"><span class="status-badge normal">완료</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-pagination">
+                        <button class="btn btn-sm btn-outline page-prev">이전</button>
+                        <div class="page-numbers">
+                            <button class="btn btn-sm btn-outline page-number active">1</button>
+                            <button class="btn btn-sm btn-outline page-number">2</button>
+                            <button class="btn btn-sm btn-outline page-number">3</button>
+                            <span class="page-dots">...</span>
+                            <button class="btn btn-sm btn-outline page-number">10</button>
+                        </div>
+                        <button class="btn btn-sm btn-outline page-next">다음</button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <p>&copy; 2025 에어컨 모니터링 시스템. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">문의하기</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/maintenance.js"></script>
+</body>
+</html>

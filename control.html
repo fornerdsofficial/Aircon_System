@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에어컨 모니터링 시스템 - 원격 제어</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo-placeholder.png" alt="로고" class="sidebar-logo">
+                <h3>에어컨 시스템</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> 대시보드</a></li>
+                    <li><a href="monitoring.html"><i class="fas fa-desktop"></i> 실시간 모니터링</a></li>
+                    <li class="active"><a href="control.html"><i class="fas fa-sliders-h"></i> 원격 제어</a></li>
+                    <li><a href="optimization.html"><i class="fas fa-bolt"></i> 에너지 최적화</a></li>
+                    <li><a href="maintenance.html"><i class="fas fa-tools"></i> 유지보수</a></li>
+                    <li><a href="automation.html"><i class="fas fa-magic"></i> 자동화 설정</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> 사용자 설정</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>원격 제어</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/images/profile-placeholder.png" alt="프로필">
+                        <div class="user-info">
+                            <h4>홍길동</h4>
+                            <p>관리자</p>
+                        </div>
+                        <button class="profile-dropdown">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 원격 제어 컨텐츠 -->
+            <div class="control-content">
+                <!-- 제어 대상 선택 섹션 -->
+                <section class="control-target">
+                    <div class="section-header">
+                        <h3>제어 대상 선택</h3>
+                        <div class="control-actions">
+                            <button class="btn btn-primary btn-select-all">전체 선택</button>
+                            <button class="btn btn-secondary btn-clear-all">선택 해제</button>
+                        </div>
+                    </div>
+                    
+                    <div class="device-selection">
+                        <div class="selection-header">
+                            <div class="selection-col">선택</div>
+                            <div class="selection-col">에어컨</div>
+                            <div class="selection-col">위치</div>
+                            <div class="selection-col">상태</div>
+                            <div class="selection-col">현재 온도</div>
+                        </div>
+                        
+                        <div class="selection-item">
+                            <div class="selection-col">
+                                <input type="checkbox" id="ac1">
+                            </div>
+                            <div class="selection-col">에어컨 #1</div>
+                            <div class="selection-col">1층 로비</div>
+                            <div class="selection-col"><span class="status-badge normal">정상</span></div>
+                            <div class="selection-col">24.5°C</div>
+                        </div>
+                        
+                        <div class="selection-item">
+                            <div class="selection-col">
+                                <input type="checkbox" id="ac2">
+                            </div>
+                            <div class="selection-col">에어컨 #2</div>
+                            <div class="selection-col">1층 사무실</div>
+                            <div class="selection-col"><span class="status-badge normal">정상</span></div>
+                            <div class="selection-col">23.0°C</div>
+                        </div>
+                        
+                        <div class="selection-item">
+                            <div class="selection-col">
+                                <input type="checkbox" id="ac3">
+                            </div>
+                            <div class="selection-col">에어컨 #3</div>
+                            <div class="selection-col">2층 회의실 A</div>
+                            <div class="selection-col"><span class="status-badge warning">경고</span></div>
+                            <div class="selection-col">26.8°C</div>
+                        </div>
+                        
+                        <div class="selection-item">
+                            <div class="selection-col">
+                                <input type="checkbox" id="ac4">
+                            </div>
+                            <div class="selection-col">에어컨 #4</div>
+                            <div class="selection-col">2층 회의실 B</div>
+                            <div class="selection-col"><span class="status-badge normal">정상</span></div>
+                            <div class="selection-col">22.5°C</div>
+                        </div>
+                        
+                        <div class="selection-item">
+                            <div class="selection-col">
+                                <input type="checkbox" id="ac5" disabled>
+                            </div>
+                            <div class="selection-col">에어컨 #5</div>
+                            <div class="selection-col">3층 휴게실</div>
+                            <div class="selection-col"><span class="status-badge critical">고장</span></div>
+                            <div class="selection-col">--</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 제어 패널 섹션 -->
+                <section class="control-panel">
+                    <div class="section-header">
+                        <h3>제어 패널</h3>
+                        <div class="selected-count">선택된 기기: <span>0</span>대</div>
+                    </div>
+                    
+                    <div class="control-options">
+                        <div class="control-card">
+                            <h4>전원</h4>
+                            <div class="toggle-container">
+                                <button class="toggle-btn active">ON</button>
+                                <button class="toggle-btn">OFF</button>
+                            </div>
+                        </div>
+                        
+                        <div class="control-card">
+                            <h4>모드</h4>
+                            <div class="mode-options">
+                                <button class="mode-btn active">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>냉방</span>
+                                </button>
+                                <button class="mode-btn">
+                                    <i class="fas fa-sun"></i>
+                                    <span>난방</span>
+                                </button>
+                                <button class="mode-btn">
+                                    <i class="fas fa-wind"></i>
+                                    <span>송풍</span>
+                                </button>
+                                <button class="mode-btn">
+                                    <i class="fas fa-tint"></i>
+                                    <span>제습</span>
+                                </button>
+                                <button class="mode-btn">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <span>자동</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="control-card">
+                            <h4>온도 설정 <span class="temp-value">24°C</span></h4>
+                            <div class="temp-control">
+                                <button class="temp-btn minus">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <div class="temp-slider">
+                                    <input type="range" min="18" max="30" value="24" class="slider" id="tempSlider">
+                                    <div class="slider-marks">
+                                        <span>18°C</span>
+                                        <span>24°C</span>
+                                        <span>30°C</span>
+                                    </div>
+                                </div>
+                                <button class="temp-btn plus">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="control-card">
+                            <h4>풍량 <span class="fan-value">중간</span></h4>
+                            <div class="fan-control">
+                                <button class="fan-btn">
+                                    <i class="fas fa-wind fa-xs"></i>
+                                    <span>약</span>
+                                </button>
+                                <button class="fan-btn active">
+                                    <i class="fas fa-wind fa-sm"></i>
+                                    <span>중</span>
+                                </button>
+                                <button class="fan-btn">
+                                    <i class="fas fa-wind fa-lg"></i>
+                                    <span>강</span>
+                                </button>
+                                <button class="fan-btn">
+                                    <i class="fas fa-random"></i>
+                                    <span>자동</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="control-actions">
+                        <div class="timer-setting">
+                            <label for="timer">타이머 설정:</label>
+                            <select id="timer">
+                                <option>사용 안함</option>
+                                <option>30분</option>
+                                <option>1시간</option>
+                                <option>2시간</option>
+                                <option>4시간</option>
+                                <option>8시간</option>
+                            </select>
+                        </div>
+                        
+                        <div class="apply-controls">
+                            <button class="btn btn-secondary">취소</button>
+                            <button class="btn btn-primary">적용</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 제어 피드백 섹션 -->
+                <section class="control-feedback">
+                    <div class="feedback-header">
+                        <h3>제어 상태</h3>
+                        <span class="timestamp">마지막 업데이트: 2025-04-18 14:32:45</span>
+                    </div>
+                    
+                    <div class="feedback-content">
+                        <div class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            <p>모든 명령이 성공적으로 적용되었습니다.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <p>&copy; 2025 에어컨 모니터링 시스템. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">문의하기</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/controls.js"></script>
+</body>
+</html>

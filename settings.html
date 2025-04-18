@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에어컨 모니터링 시스템 - 사용자 설정</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo-placeholder.png" alt="로고" class="sidebar-logo">
+                <h3>에어컨 시스템</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> 대시보드</a></li>
+                    <li><a href="monitoring.html"><i class="fas fa-desktop"></i> 실시간 모니터링</a></li>
+                    <li><a href="control.html"><i class="fas fa-sliders-h"></i> 원격 제어</a></li>
+                    <li><a href="optimization.html"><i class="fas fa-bolt"></i> 에너지 최적화</a></li>
+                    <li><a href="maintenance.html"><i class="fas fa-tools"></i> 유지보수</a></li>
+                    <li><a href="automation.html"><i class="fas fa-magic"></i> 자동화 설정</a></li>
+                    <li class="active"><a href="settings.html"><i class="fas fa-cog"></i> 사용자 설정</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>사용자 설정</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/images/profile-placeholder.png" alt="프로필">
+                        <div class="user-info">
+                            <h4>홍길동</h4>
+                            <p>관리자</p>
+                        </div>
+                        <button class="profile-dropdown">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 사용자 설정 컨텐츠 -->
+            <div class="settings-content">
+                <!-- 설정 탭 메뉴 -->
+                <div class="settings-tabs">
+                    <button class="tab-btn active" data-tab="profile">프로필 정보</button>
+                    <button class="tab-btn" data-tab="notification">알림 설정</button>
+                    <button class="tab-btn" data-tab="security">보안 설정</button>
+                    <button class="tab-btn" data-tab="display">화면 설정</button>
+                </div>
+
+                <!-- 프로필 정보 탭 -->
+                <div class="settings-tab-content active" id="profile-tab">
+                    <div class="profile-settings">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img src="assets/images/profile-placeholder.png" alt="프로필 이미지">
+                                <button class="change-avatar">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <div class="profile-info">
+                                <h3>홍길동</h3>
+                                <p>관리자</p>
+                                <p>최근 로그인: 2025-04-18 09:15</p>
+                            </div>
+                        </div>
+                        
+                        <form class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">이름</label>
+                                    <input type="text" id="name" value="홍길동">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employee-id">사원 번호</label>
+                                    <input type="text" id="employee-id" value="EMP-2025-001" disabled>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">이메일</label>
+                                    <input type="email" id="email" value="hong@company.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">연락처</label>
+                                    <input type="tel" id="phone" value="010-1234-5678">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="department">부서</label>
+                                    <input type="text" id="department" value="시설관리팀">
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">직책</label>
+                                    <input type="text" id="position" value="팀장">
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">취소</button>
+                                <button type="submit" class="btn btn-primary">저장</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 알림 설정 탭 -->
+                <div class="settings-tab-content" id="notification-tab">
+                    <div class="notification-settings">
+                        <h3>알림 설정</h3>
+                        <p>알림을 받을 방법과 유형을 선택하세요.</p>
+                        
+                        <div class="notification-methods">
+                            <h4>알림 방법</h4>
+                            <div class="method-item">
+                                <div class="method-header">
+                                    <label>앱 내 알림</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="app-notification" class="toggle-input" checked>
+                                        <label for="app-notification" class="toggle-label"></label>
+                                    </div>
+                                </div>
+                                <p class="method-description">앱 내에서 알림을 받습니다. 알림이 있을 경우 화면 우측 상단에 알림 배지가 표시됩니다.</p>
+                            </div>
+                            
+                            <div class="method-item">
+                                <div class="method-header">
+                                    <label>이메일 알림</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="email-notification" class="toggle-input" checked>
+                                        <label for="email-notification" class="toggle-label"></label>
+                                    </div>
+                                </div>
+                                <p class="method-description">중요한 알림은 이메일로도 발송됩니다. 이메일: hong@company.com</p>
+                            </div>
+                            
+                            <div class="method-item">
+                                <div class="method-header">
+                                    <label>SMS 알림</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="sms-notification" class="toggle-input">
+                                        <label for="sms-notification" class="toggle-label"></label>
+                                    </div>
+                                </div>
+                                <p class="method-description">긴급한 알림은 SMS로 발송됩니다. 연락처: 010-1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-types">
+                            <h4>알림 유형</h4>
+                            
+                            <div class="type-item">
+                                <div class="type-header">
+                                    <div class="type-info">
+                                        <label>시스템 오류 및 고장</label>
+                                        <p>에어컨 고장, 시스템 오류 등의 알림</p>
+                                    </div>
+                                    <div class="type-methods">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> 앱
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> 이메일
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> SMS
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="type-item">
+                                <div class="type-header">
+                                    <div class="type-info">
+                                        <label>유지보수 알림</label>
+                                        <p>필터 교체, 정기 점검 등 예정된 유지보수</p>
+                                    </div>
+                                    <div class="type-methods">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> 앱
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> 이메일
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox"> SMS
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="type-item">
+                                <div class="type-header">
+                                    <div class="type-info">
+                                        <label>에너지 사용량 알림</label>
+                                        <p>에너지 소비 패턴 변화, 최적화 제안 등</p>
+                                    </div>
+                                    <div class="type-methods">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> 앱
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox"> 이메일
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox"> SMS
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="type-item">
+                                <div class="type-header">
+                                    <div class="type-info">
+                                        <label>시스템 업데이트</label>
+                                        <p>소프트웨어 업데이트, 새로운 기능 등</p>
+                                    </div>
+                                    <div class="type-methods">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> 앱
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox"> 이메일
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox"> SMS
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary">취소</button>
+                            <button type="button" class="btn btn-primary">저장</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 보안 설정 탭 -->
+                <div class="settings-tab-content" id="security-tab">
+                    <div class="security-settings">
+                        <h3>보안 설정</h3>
+                        <p>계정 보안을 위한 비밀번호 및 인증 설정입니다.</p>
+                        
+                        <div class="password-change">
+                            <h4>비밀번호 변경</h4>
+                            <form class="password-form">
+                                <div class="form-group">
+                                    <label for="current-password">현재 비밀번호</label>
+                                    <input type="password" id="current-password">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="new-password">새 비밀번호</label>
+                                    <input type="password" id="new-password">
+                                    <p class="form-hint">8자 이상, 영문과 숫자, 특수문자 조합</p>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="confirm-password">새 비밀번호 확인</label>
+                                    <input type="password" id="confirm-password">
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">비밀번호 변경</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="two-factor-auth">
+                            <h4>2단계 인증</h4>
+                            <div class="auth-toggle">
+                                <div class="auth-info">
+                                    <p>2단계 인증을 사용하면 로그인 시 추가 인증 절차가 필요하여 계정 보안이 강화됩니다.</p>
+                                    <p class="auth-status">현재 상태: <span class="status-disabled">사용 안함</span></p>
+                                </div>
+                                <div class="toggle-switch large">
+                                    <input type="checkbox" id="two-factor" class="toggle-input">
+                                    <label for="two-factor" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-setup" disabled>설정하기</button>
+                        </div>
+                        
+                        <div class="login-history">
+                            <h4>로그인 기록</h4>
+                            <div class="history-list">
+                                <div class="history-item">
+                                    <div class="history-info">
+                                        <div class="device-info">
+                                            <i class="fas fa-desktop"></i>
+                                            <div class="device-details">
+                                                <p class="device-name">Windows 10 - Chrome</p>
+                                                <p class="login-time">2025-04-18 09:15</p>
+                                            </div>
+                                        </div>
+                                        <div class="location-info">
+                                            <p>서울, 대한민국</p>
+                                            <p>IP: 192.168.1.1</p>
+                                        </div>
+                                    </div>
+                                    <div class="current-session">현재 세션</div>
+                                </div>
+                                
+                                <div class="history-item">
+                                    <div class="history-info">
+                                        <div class="device-info">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <div class="device-details">
+                                                <p class="device-name">iPhone - Safari</p>
+                                                <p class="login-time">2025-04-17 17:42</p>
+                                            </div>
+                                        </div>
+                                        <div class="location-info">
+                                            <p>서울, 대한민국</p>
+                                            <p>IP: 192.168.2.1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="history-item">
+                                    <div class="history-info">
+                                        <div class="device-info">
+                                            <i class="fas fa-desktop"></i>
+                                            <div class="device-details">
+                                                <p class="device-name">Windows 10 - Chrome</p>
+                                                <p class="login-time">2025-04-17 08:30</p>
+                                            </div>
+                                        </div>
+                                        <div class="location-info">
+                                            <p>서울, 대한민국</p>
+                                            <p>IP: 192.168.1.1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">모든 기록 보기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 화면 설정 탭 -->
+                <div class="settings-tab-content" id="display-tab">
+                    <div class="display-settings">
+                        <h3>화면 설정</h3>
+                        <p>사용자 인터페이스 및 표시 방식을 설정합니다.</p>
+                        
+                        <div class="theme-settings">
+                            <h4>테마</h4>
+                            <div class="theme-options">
+                                <div class="theme-option">
+                                    <div class="theme-preview light-theme"></div>
+                                    <div class="theme-name">
+                                        <input type="radio" name="theme" id="light-theme" checked>
+                                        <label for="light-theme">라이트 모드</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="theme-option">
+                                    <div class="theme-preview dark-theme"></div>
+                                    <div class="theme-name">
+                                        <input type="radio" name="theme" id="dark-theme">
+                                        <label for="dark-theme">다크 모드</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="theme-option">
+                                    <div class="theme-preview system-theme"></div>
+                                    <div class="theme-name">
+                                        <input type="radio" name="theme" id="system-theme">
+                                        <label for="system-theme">시스템 설정 따름</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-settings">
+                            <h4>대시보드 설정</h4>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>대시보드 레이아웃</label>
+                                    <select>
+                                        <option>기본</option>
+                                        <option>간소화</option>
+                                        <option>확장</option>
+                                        <option>맞춤 설정</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>기본 화면</label>
+                                    <select>
+                                        <option>대시보드</option>
+                                        <option>실시간 모니터링</option>
+                                        <option>원격 제어</option>
+                                        <option>에너지 최적화</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>자동 새로고침 간격</label>
+                                    <select>
+                                        <option>10초</option>
+                                        <option>30초</option>
+                                        <option>1분</option>
+                                        <option>5분</option>
+                                        <option>사용 안함</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="language-settings">
+                            <h4>언어 설정</h4>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>인터페이스 언어</label>
+                                    <select>
+                                        <option>한국어</option>
+                                        <option>English</option>
+                                        <option>日本語</option>
+                                        <option>中文</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>날짜 형식</label>
+                                    <select>
+                                        <option>YYYY-MM-DD</option>
+                                        <option>DD/MM/YYYY</option>
+                                        <option>MM/DD/YYYY</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>시간 형식</label>
+                                    <select>
+                                        <option>24시간</option>
+                                        <option>12시간 (AM/PM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary">취소</button>
+                            <button type="button" class="btn btn-primary">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <p>&copy; 2025 에어컨 모니터링 시스템. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">문의하기</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

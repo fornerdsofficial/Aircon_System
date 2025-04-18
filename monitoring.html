@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에어컨 모니터링 시스템 - 실시간 모니터링</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo-placeholder.png" alt="로고" class="sidebar-logo">
+                <h3>에어컨 시스템</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> 대시보드</a></li>
+                    <li class="active"><a href="monitoring.html"><i class="fas fa-desktop"></i> 실시간 모니터링</a></li>
+                    <li><a href="control.html"><i class="fas fa-sliders-h"></i> 원격 제어</a></li>
+                    <li><a href="optimization.html"><i class="fas fa-bolt"></i> 에너지 최적화</a></li>
+                    <li><a href="maintenance.html"><i class="fas fa-tools"></i> 유지보수</a></li>
+                    <li><a href="automation.html"><i class="fas fa-magic"></i> 자동화 설정</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> 사용자 설정</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>실시간 모니터링</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/images/profile-placeholder.png" alt="프로필">
+                        <div class="user-info">
+                            <h4>홍길동</h4>
+                            <p>관리자</p>
+                        </div>
+                        <button class="profile-dropdown">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 실시간 모니터링 컨텐츠 -->
+            <div class="monitoring-content">
+                <!-- 검색 및 필터 섹션 -->
+                <section class="search-filter">
+                    <div class="search-container">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="에어컨 이름 또는 위치 검색">
+                        </div>
+                        <button class="btn btn-primary">검색</button>
+                    </div>
+                    <div class="filter-container">
+                        <div class="filter-group">
+                            <label>층</label>
+                            <select>
+                                <option>전체</option>
+                                <option>1층</option>
+                                <option>2층</option>
+                                <option>3층</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>구역</label>
+                            <select>
+                                <option>전체</option>
+                                <option>사무실</option>
+                                <option>회의실</option>
+                                <option>휴게실</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>상태</label>
+                            <select>
+                                <option>전체</option>
+                                <option>정상</option>
+                                <option>경고</option>
+                                <option>고장</option>
+                                <option>비활성</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 에어컨 목록 및 상세 보기 섹션 -->
+                <section class="devices-container">
+                    <div class="devices-list">
+                        <div class="list-header">
+                            <div class="list-col">이름</div>
+                            <div class="list-col">위치</div>
+                            <div class="list-col">온도</div>
+                            <div class="list-col">상태</div>
+                        </div>
+                        
+                        <div class="device-item active">
+                            <div class="list-col">
+                                <div class="device-name">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>에어컨 #1</span>
+                                </div>
+                            </div>
+                            <div class="list-col">1층 로비</div>
+                            <div class="list-col">24.5°C</div>
+                            <div class="list-col"><span class="status-badge normal">정상</span></div>
+                        </div>
+                        
+                        <div class="device-item">
+                            <div class="list-col">
+                                <div class="device-name">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>에어컨 #2</span>
+                                </div>
+                            </div>
+                            <div class="list-col">1층 사무실</div>
+                            <div class="list-col">23.0°C</div>
+                            <div class="list-col"><span class="status-badge normal">정상</span></div>
+                        </div>
+                        
+                        <div class="device-item">
+                            <div class="list-col">
+                                <div class="device-name">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>에어컨 #3</span>
+                                </div>
+                            </div>
+                            <div class="list-col">2층 회의실 A</div>
+                            <div class="list-col">26.8°C</div>
+                            <div class="list-col"><span class="status-badge warning">경고</span></div>
+                        </div>
+                        
+                        <div class="device-item">
+                            <div class="list-col">
+                                <div class="device-name">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>에어컨 #4</span>
+                                </div>
+                            </div>
+                            <div class="list-col">2층 회의실 B</div>
+                            <div class="list-col">22.5°C</div>
+                            <div class="list-col"><span class="status-badge normal">정상</span></div>
+                        </div>
+                        
+                        <div class="device-item">
+                            <div class="list-col">
+                                <div class="device-name">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>에어컨 #5</span>
+                                </div>
+                            </div>
+                            <div class="list-col">3층 휴게실</div>
+                            <div class="list-col">--</div>
+                            <div class="list-col"><span class="status-badge critical">고장</span></div>
+                        </div>
+                    </div>
+
+                    <div class="device-details">
+                        <div class="detail-header">
+                            <h3>에어컨 #1 (1층 로비)</h3>
+                            <div class="detail-actions">
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="fas fa-cog"></i> 원격 제어
+                                </button>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="fas fa-history"></i> 이력 보기
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-temperature-high"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <p class="stat-label">현재 온도</p>
+                                    <p class="stat-value">24.5°C</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <p class="stat-label">현재 습도</p>
+                                    <p class="stat-value">45%</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <p class="stat-label">전력 소비</p>
+                                    <p class="stat-value">2.4 kW</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <p class="stat-label">풍량</p>
+                                    <p class="stat-value">중간</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-chart">
+                            <h4>온도 변화 (최근 24시간)</h4>
+                            <div class="chart-placeholder">
+                                <div class="placeholder-text">차트 영역</div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-info">
+                            <div class="info-section">
+                                <h4>기기 정보</h4>
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <p class="info-label">모델명</p>
+                                        <p class="info-value">AC-2500X</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">제조사</p>
+                                        <p class="info-value">냉방기기(주)</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">설치일</p>
+                                        <p class="info-value">2023-04-15</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">마지막 점검일</p>
+                                        <p class="info-value">2025-02-28</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-section">
+                                <h4>운영 상태</h4>
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <p class="info-label">작동 모드</p>
+                                        <p class="info-value">냉방</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">설정 온도</p>
+                                        <p class="info-value">24°C</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">필터 상태</p>
+                                        <p class="info-value">양호 (78%)</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">연간 에너지</p>
+                                        <p class="info-value">2,450 kWh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <p>&copy; 2025 에어컨 모니터링 시스템. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">문의하기</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

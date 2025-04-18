@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에어컨 모니터링 시스템 - 에너지 최적화</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo-placeholder.png" alt="로고" class="sidebar-logo">
+                <h3>에어컨 시스템</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> 대시보드</a></li>
+                    <li><a href="monitoring.html"><i class="fas fa-desktop"></i> 실시간 모니터링</a></li>
+                    <li><a href="control.html"><i class="fas fa-sliders-h"></i> 원격 제어</a></li>
+                    <li class="active"><a href="optimization.html"><i class="fas fa-bolt"></i> 에너지 최적화</a></li>
+                    <li><a href="maintenance.html"><i class="fas fa-tools"></i> 유지보수</a></li>
+                    <li><a href="automation.html"><i class="fas fa-magic"></i> 자동화 설정</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> 사용자 설정</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <!-- 헤더 -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>에너지 최적화</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/images/profile-placeholder.png" alt="프로필">
+                        <div class="user-info">
+                            <h4>홍길동</h4>
+                            <p>관리자</p>
+                        </div>
+                        <button class="profile-dropdown">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 에너지 최적화 컨텐츠 -->
+            <div class="optimization-content">
+                <!-- 기간 선택 필터 -->
+                <section class="date-filter">
+                    <div class="filter-controls">
+                        <div class="date-range">
+                            <label>기간 선택:</label>
+                            <div class="date-inputs">
+                                <input type="date" id="startDate" value="2025-04-01">
+                                <span class="date-separator">~</span>
+                                <input type="date" id="endDate" value="2025-04-18">
+                            </div>
+                        </div>
+                        <div class="quick-period">
+                            <button class="btn btn-sm btn-outline" data-period="week">최근 1주</button>
+                            <button class="btn btn-sm btn-outline" data-period="month">최근 1개월</button>
+                            <button class="btn btn-sm btn-outline active" data-period="quarter">최근 3개월</button>
+                            <button class="btn btn-sm btn-outline" data-period="year">1년</button>
+                        </div>
+                        <button class="btn btn-primary btn-apply-date">적용</button>
+                    </div>
+                </section>
+
+                <!-- 에너지 사용 분석 섹션 -->
+                <section class="energy-analysis">
+                    <div class="section-header">
+                        <h3>에너지 사용 분석</h3>
+                        <div class="controls">
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-download"></i> 리포트 다운로드
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-cards">
+                        <div class="analysis-card">
+                            <h4>총 전력 소비량</h4>
+                            <p class="value">48,720 <span class="unit">kWh</span></p>
+                            <p class="comparison negative">
+                                <i class="fas fa-arrow-up"></i> 전월 대비 5.2% 증가
+                            </p>
+                        </div>
+                        <div class="analysis-card">
+                            <h4>총 비용</h4>
+                            <p class="value">4,872,000 <span class="unit">원</span></p>
+                            <p class="comparison negative">
+                                <i class="fas fa-arrow-up"></i> 전월 대비 5.2% 증가
+                            </p>
+                        </div>
+                        <div class="analysis-card">
+                            <h4>평균 에너지 효율</h4>
+                            <p class="value">92 <span class="unit">%</span></p>
+                            <p class="comparison positive">
+                                <i class="fas fa-arrow-up"></i> 전월 대비 1.5% 향상
+                            </p>
+                        </div>
+                        <div class="analysis-card">
+                            <h4>CO₂ 배출량</h4>
+                            <p class="value">22.6 <span class="unit">톤</span></p>
+                            <p class="comparison negative">
+                                <i class="fas fa-arrow-up"></i> 전월 대비 5.2% 증가
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-container">
+                        <div class="chart-box">
+                            <h4>월별 에너지 소비 추이</h4>
+                            <canvas id="monthlyEnergyChart"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h4>시간대별 에너지 소비 패턴</h4>
+                            <canvas id="hourlyEnergyChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 최적화 추천 섹션 -->
+                <section class="optimization-recommendations">
+                    <div class="section-header">
+                        <h3>AI 최적화 추천</h3>
+                        <span class="last-updated">마지막 업데이트: 2025-04-18 08:30</span>
+                    </div>
+                    
+                    <div class="recommendations-container">
+                        <div class="recommendation-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4>에너지 절약 모드 활성화</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>주말 및 공휴일에 자동으로 에너지 절약 모드로 전환하면 약 12%의 에너지를 절약할 수 있습니다.</p>
+                                <div class="saving-info">
+                                    <div class="saving-value">
+                                        <span>예상 절감액</span>
+                                        <strong>582,000원/월</strong>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">적용하기</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-temperature-high"></i>
+                                </div>
+                                <h4>최적 설정 온도 조정</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>전체 냉방 설정 온도를 1°C 높이면 약 8%의 에너지를 절약할 수 있습니다. 현재 평균 설정: 23°C, 추천 설정: 24°C</p>
+                                <div class="saving-info">
+                                    <div class="saving-value">
+                                        <span>예상 절감액</span>
+                                        <strong>389,000원/월</strong>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">적용하기</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h4>스케줄 최적화</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>출근 시간 30분 전에 에어컨을 가동하고, 퇴근 30분 전에 꺼지도록 설정하면 약 5%의 에너지를 절약할 수 있습니다.</p>
+                                <div class="saving-info">
+                                    <div class="saving-value">
+                                        <span>예상 절감액</span>
+                                        <strong>243,000원/월</strong>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">적용하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 에너지 효율 비교 섹션 -->
+                <section class="energy-comparison">
+                    <div class="section-header">
+                        <h3>유사 건물과 에너지 효율 비교</h3>
+                    </div>
+                    
+                    <div class="comparison-chart-container">
+                        <canvas id="buildingComparisonChart"></canvas>
+                    </div>
+                    
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div class="table-col">구분</div>
+                            <div class="table-col">당사 건물</div>
+                            <div class="table-col">유사 규모 평균</div>
+                            <div class="table-col">최상위 25%</div>
+                            <div class="table-col">차이</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-col">월평균 kWh/m²</div>
+                            <div class="table-col">12.8</div>
+                            <div class="table-col">15.2</div>
+                            <div class="table-col">10.5</div>
+                            <div class="table-col positive">-15.8%</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-col">월평균 비용/m²</div>
+                            <div class="table-col">1,280원</div>
+                            <div class="table-col">1,520원</div>
+                            <div class="table-col">1,050원</div>
+                            <div class="table-col positive">-15.8%</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-col">에너지 효율 점수</div>
+                            <div class="table-col">92</div>
+                            <div class="table-col">85</div>
+                            <div class="table-col">95</div>
+                            <div class="table-col positive">+8.2%</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <p>&copy; 2025 에어컨 모니터링 시스템. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">문의하기</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/optimization.js"></script>
+</body>
+</html>
